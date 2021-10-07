@@ -1,0 +1,57 @@
+ * {
+            margin: 0;
+            padding: 0;
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        
+        
+       
+        #cont{
+            
+            
+            height: 100;
+            
+        }
+        .num{
+            
+            height: 40px;
+        }
+
+        .bottom_button{
+            position: relative;
+            top:430px;
+            left:220px;
+        }
+       .cont-2{
+            position: relative;
+            top:430px;
+            height:50px;
+            Left: 10%;
+            width: 600px;
+        }
+        
+       
+      
+        
+       
+        
+        .num{
+            text-align: center;
+        }
+        .write_day{
+            text-align: center;
+        }
+        .writer{
+            text-align: center;
+        }
+        .date{
+            text-align: center;
+        }
+        .user{
+            text-align: center;
+        }
+        .at_list{
+            height: 450px;
+        }
+        
