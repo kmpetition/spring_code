@@ -20633,8 +20633,8 @@ code {
 }
 
 .alert-primary {
-  color: #393783;
-  background-color: rgba(75, 73, 172, 0.2);
+ /*  color: #393783;
+  background-color: rgba(75, 73, 172, 0.2); */
   border-color: #45439e;
 }
 

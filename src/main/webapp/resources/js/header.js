@@ -24,7 +24,7 @@ $(function() {
 
 
       var html = '<tr><td>' + '<input type="text">' + '</td>'; //tr, td를 열고 + 문자열로 바꾸고 +td 닫기
-      html += '<td></p><button type="button" class="btn btn-outline-secondary btnDel">제거</button>'; //html변수에 삭제버튼을 대입
+      html += '<td></p><button type="button" class="btn btn-outline-secondary btnDel" style="height:25px; line-height:0; width:90px;">제거</button>'; //html변수에 삭제버튼을 대입
       html += '</td></tr>';
 
       $("#boxWrap").append(html); //list라는 아이디에 html을 추가해라
@@ -46,7 +46,7 @@ $(function() {
    $(".button2").click(function() { //btnAdd라는 버튼을 눌렀을때 ->이벤트 등록
 
       var html = '<tr><td>' + '<input type="text">' + '</td>'; //tr, td를 열고 + 문자열로 바꾸고 +td 닫기
-      html += '<td></p><button type="button" class="btn btn-outline-secondary btnDel">제거</button>'; //html변수에 삭제버튼을 대입
+      html += '<td></p><button type="button" class="btn btn-outline-secondary btnDel" style="height:25px; line-height:0; width:90px;">제거</button>'; //html변수에 삭제버튼을 대입
       html += '</td></tr>';
 
       $("#boxWrap2").append(html); //list라는 아이디에 html을 추가해라

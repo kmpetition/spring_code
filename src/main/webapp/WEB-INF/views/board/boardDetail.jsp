@@ -310,8 +310,8 @@
 
 
 							 <div class="row bottom_download">
-                              <div class="col-12 a3-1">
-                                 <button type="button" class=" btn btn-primary a3"
+                              <div class="col-4 a3-1">
+                                 <button type="button" class=" btn btn-primary a3-1"
                                     onClick="fileDownload('${contextPath }/downloadFile.do','${file.uploadfile }')">첨부파일
                                     다운</button> 
                               </div>

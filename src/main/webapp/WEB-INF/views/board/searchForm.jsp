@@ -8,22 +8,28 @@
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
+	/* 	name이 같은 input은 
+	 request.getParameterValues('이름');
+	 으로 한 번에 받아올 수 있음 */
+		function fn_addSearchWord() {
+			if (cntSearch <= 3) {
+				$("#d_search").append(
+						"<br>" + "<input type='text' name='searchWord"+cntSearch+"' />");
+				cntSearch++;
+			} else {
+				return;
+			}
+		}
 
-	
-/* 	name이 같은 input은 
-	request.getParameterValues('이름');
-	으로 한 번에 받아올 수 있음 */
-	function fn_addSearchWord(){
-		$("#d_search")
-		.append("<br>" + "<input type='text' name='searchWord' />");
-		cntSeacrch++;
-	}
-	
-	function fn_addExceptWord(){
-		$("#d_except")
-		.append("<br>" + "<input type='text' name='exceptWord' />");
-		cntExcept++;
-	}
+		function fn_addExceptWord() {
+			if (cntExcept <= 3) {
+				$("#d_except").append(
+						"<br>" + "<input type='text' name='exceptWord"+cntExcept+"' />");
+				cntExcept++;
+			} else {
+				return;
+			}
+		}
 </script>
 
 
@@ -42,7 +48,7 @@
 
 			<tr>
 				<td width="150" align="center" bgcolor="#FF9933">제외할 워드</td>
-				<td><input type=text name="exceptWord"  /></td>
+				<td><input type=text name="exceptWord" /></td>
 				<td align="left"><input type="button" value="워드 추가"
 					onClick="fn_addExceptWord()" /></td>
 			</tr>
@@ -51,17 +57,17 @@
 			</tr>
 			<tr>
 				<td width="150" align="center" bgcolor="#FF9933">시작기간</td>
-				<td><input type=date  name="startDate"/></td>
+				<td><input type=date name="startDate" /></td>
 			</tr>
 
 			<tr>
 				<td width="150" align="center" bgcolor="#FF9933">종료기간</td>
 				<td><input type=date name="endDate" /></td>
 			</tr>
-			
+
 			<tr id="tr_btn">
 				<td><input type="submit" value="검색"></td>
-					
+
 			</tr>
 
 

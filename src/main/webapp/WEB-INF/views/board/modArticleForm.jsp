@@ -84,7 +84,7 @@
 	<form method="post" action="${contextPath}/board/modArticle.do"
 		enctype="multipart/form-data" name="frmNotice">
 		<input type="hidden" name="articleNO"
-         value="${articleMap.article.articleNO }">
+			value="${articleMap.article.articleNO }">
 		<table border=0 align="center">
 
 			<div class="row" style="padding-top: 80px;">
@@ -111,42 +111,45 @@
 								</div>
 
 							</div>
-							
-							<div class="row">
-								<div class="col-12 little_name">
-									<h5>글번호 : ${boardVO.articleNO } | 작성자 : ${boardVO.id } |
-										작성일자 : ${boardVO.createdate } | ${boardVO.visible}</h5>
-									<hr align="left"
-										style="border: solid 1px #0670D9; width: 100%;">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-1 text_filed2">
-									<h5>내용</h5>
 
+							<div class="row">
+								<div class="col-7 little_name">
+									<h5>글번호 : ${boardVO.articleNO } | 작성자 : ${boardVO.id } |
+										작성일자 : ${boardVO.createdate }</h5>
 								</div>
-								<div class="col text_filed2">
-									<textarea class="inside_text1" id="story" name="story"
-										style="resize: none;">${boardVO.content }</textarea>
+								<div class="col-1 check_box">
+									<input type="checkbox" class="check_box_in" name="visible"
+										checked="checked"> <input type="hidden" name="visible"
+										value="true">
 								</div>
+								<div class="col-2 check_box2">
+									<h5 class="check_box_in2">비밀글</h5>
+								</div>
+								<hr align="left" style="border: solid 1px #0670D9; width: 100%;">
 							</div>
+							<div class="col-1 text_filed2">
+								<h5>내용</h5>
+
+							</div>
+							<div class="col-11 text_filed2">
+								<textarea class="inside_text1" id="story" name="story"
+									style="resize: none;">${boardVO.content }</textarea>
+							</div>
+							
 							<div class="text">
 								<c:if test="${not empty uploadList}">
 									<c:forEach var="file" items="${uploadList }">
-                         ${file.uploadfile }   
+                         ${file.uploadfile }  
                         </c:forEach>
 								</c:if>
 							</div>
-
-
 							<div class="row bottom_download">
-								<div class="col-12 a3-1">
-									<button type="button" class=" btn btn-primary a3"
+								<div class="col-4 a3-1">
+									<button type="button" class=" btn btn-primary a3-1"
 										onClick="fileDownload('${contextPath }/downloadFile.do','${file.uploadfile }')">첨부파일
 										다운</button>
 								</div>
 							</div>
-
 							<div class="row bottom_button">
 								<div class="col-2">
 									<button type="button" class=" btn btn-primary a1"
@@ -160,6 +163,13 @@
 									<button type="button" class=" btn btn-danger a3"
 										onClick="fn_delete(this.form, '${boardVO.articleNO}')">삭제</button>
 								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
 		</table>
 	</form>
 </body>
+</html>
