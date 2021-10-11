@@ -5,71 +5,171 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <c:set var="now" value="<%=new Date()%>" />
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"
+	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.87.0">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Headers · Bootstrap v5.1</title>
 
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/5.1/examples/headers/">
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
+	rel="stylesheet">
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+	integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="${contextPath}/resources/css/list_onebyone_detail _05.css"
+	type="text/css">
+
+<!-- noti js-->
+<script src="${contextPath}/resources/js/notice.js"></script>
+<!-- alert -->
+<script
+	src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
-function backToList(obj) { // [리스트로 돌아가기] 나 [취소] 눌렀을 때 obj <- this.form(폼 객체 전체)
-    obj.action = "${contextPath}/board/boardList.do";
-    obj.setAttribute("method", "get");
-    obj.submit();
- }
- var cnt = 1;
+	function backToList(obj) { // [리스트로 돌아가기] 나 [취소] 눌렀을 때 obj <- this.form(폼 객체 전체)
+		obj.action = "${contextPath}/board/boardList.do";
+		obj.setAttribute("method", "get");
+		obj.submit();
+	}
+	var cnt = 1;
 	function fn_addFile() {
-		$("#d_file")
-				.append("<br>" + "<input type='file' name='file"+cnt+"' />");
-		cnt++;
+		if (cnt <= 3) {
+			$("#d_file").append(
+					"<br>" + "<input type='file' name='file"+cnt+"' />");
+			cnt++;
+		} else {
+			return;
+		}
 	}
 </script>
+</head>
 
+<!DOCTYPE html>
+<html>
 
 <body>
 	<form method="post" action="${contextPath}/board/addBoard.do"
-		enctype="multipart/form-data">
+		enctype="multipart/form-data" name="frmNotice">
 		<table border=0 align="center">
-<tr>
-				<td width="150" align="center" bgcolor="#FF9933">작성자</td>
-				<td><input type=text name="v_id" id="id" value=${memberInfo.id } disabled/></td>
-				<input type="hidden" name="id" value=${memberInfo.id }>
-			</tr>
 
-			<tr>
-				<td width="150" align="center" bgcolor="#FF9933">제목</td>
-				<td><input type=text name="title" id="i_title" /></td>
-			</tr>
-			<tr>
-				<td width="150" align="center" bgcolor="#FF9933">내용</td>
-				<td><textarea rows="20" cols="60" name="content" id="i_content"></textarea></td>
-			</tr>
+			<div class="row" style="padding-top: 80px;">
 
-			<tr>
-				<td width="150" align="center" bgcolor="#FF9933">등록일자</td>
-				<td><input type=text value="<fmt:formatDate value="${now}" />"
-					disabled /></td>
-			</tr>
-			<tr>
-				<td align="right">파일 첨부</td>
-				<td align="left"><input type="button" value="파일 추가"
-					onClick="fn_addFile()" /></td>
+				<div class="col-8" id="cont">
+
+					<div class="g_header">
+
+						<h1>1:1 문의 작성</h1>
+					</div>
 
 
-			</tr>
-			<tr>
-				<td colspan="4"><div id="d_file"></div></td>
-			</tr>
 
 
-			<tr id="tr_btn">
-				<td><input type=button value="리스트로 돌아가기"
-					onClick="backToList(this.form)"> <input type="submit"
-					value="등록하기"></td>
-					<td align="right">공개여부</td>
-					<td>
-						<input type="checkbox" name="visible" checked="checked" >
-						<!-- <input type="hidden" name="visible" value="true"> -->
-					</td>
-			</tr>
+					<div class="row ">
+
+						<div class="col-11 alert alert-primary layer_content at_list">
+
+					<!-- <div class="row">
+						<div class="col-12 little_header">
+							<h1>1:1문의 수정</h1>
+							<hr align="left" style="border: solid 1px #0670D9; width: 100%;">
+						</div>
+
+					</div> -->
 
 
+							<div class="row">
+								<div class="col-1 text_filed2">
+									<h5>제목</h5>
+
+								</div>
+								<div class="col-5 text_filed">
+									<input type="text" class="inside_text" value="">
+								</div>
+								<div class="col-3 check_box">
+									<input type="checkbox" class="check_box_in" name="visible"
+										checked="checked"> <input type="hidden" name="visible"
+										value="true">
+								</div>
+								<div class="col-3 check_box2">
+									<h5 class="check_box_in2">비밀글</h5>
+								</div>
+							</div>
+
+
+							<div class="row">
+								<div class="col-5 re_writer">
+									<span></span>
+								</div>
+
+							</div>
+
+
+							<div class="row">
+								<div class="col-1 text_filed2">
+									<h5>내용</h5>
+
+								</div>
+								<div class="col text_filed2">
+									<input type="text" class="bottom_text" value="">
+
+								</div>
+							</div>
+
+							<div class="row bottom_insert">
+								<div class="col-2s insert">
+									<button type="button" class=" btn btn-primary a4"
+										onClick="fn_addFile()">파일 첨부</button>
+								</div>
+								<div id="d_file"></div>
+							</div>
+
+							<!-- 	<div class="row bottom_button">
+								<div class="col-5">
+									<bottom> </bottom>
+								</div>
+
+
+
+								<div class="col-1">
+									<span></span>
+								</div>
+								<div class="col-2">
+									<button type="button" class=" btn btn-primary a3"
+										onClick="backToList(this.form)">목록</button>
+								</div>
+								<div class="col-2">
+									<button type="button" class=" btn btn-primary a3"
+										onClick="noticeChk(this.form)">확인</button>
+								</div>
+							</div> -->
+							<div class="row bottom_button">
+								<div class="col">
+									<button type="button" class=" btn btn-primary a3"
+										onClick="backToList(this.form)">목록</button>
+								</div>
+								<div class="col">
+									<button type="button" class=" btn btn-primary a3"
+										onClick="noticeChk(this.form)">확인</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</table>
 	</form>
 </body>

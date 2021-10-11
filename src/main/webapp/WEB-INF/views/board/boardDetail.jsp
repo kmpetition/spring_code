@@ -285,11 +285,12 @@
 							<div class="row">
 								<div class="col-12 little_name">
 									<h5>글번호 : ${boardVO.articleNO } | 작성자 : ${boardVO.id } |
-										작성일자 : ${boardVO.createdate }</h5>
+										작성일자 : ${boardVO.createdate } | ${boardVO.visible}</h5>
 									<hr align="left"
 										style="border: solid 1px #0670D9; width: 100%;">
-								</div>
 
+								</div>
+							
 
 							</div>
 							<div class="row">
@@ -308,13 +309,13 @@
 							</div>
 
 
-							<%--  <div class="row bottom_download">
+							 <div class="row bottom_download">
                               <div class="col-12 a3-1">
                                  <button type="button" class=" btn btn-primary a3"
                                     onClick="fileDownload('${contextPath }/downloadFile.do','${file.uploadfile }')">첨부파일
                                     다운</button> 
                               </div>
-                           </div> --%>
+                           </div>
 
 							<div class="row bottom_button">
 								<div class="col-2">

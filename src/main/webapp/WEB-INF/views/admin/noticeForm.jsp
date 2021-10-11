@@ -141,9 +141,6 @@
                                  onClick="noticeChk(this.form)">확인</button>
                            </div>
                         </div>
-
-
-
                      </div>
                   </div>
                </div>

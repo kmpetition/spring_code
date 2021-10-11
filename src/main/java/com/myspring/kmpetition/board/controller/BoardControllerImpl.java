@@ -224,11 +224,11 @@ public class BoardControllerImpl extends MainController implements BoardControll
 		BoardVO article=(BoardVO) articleMap.get("boardVO");
 		article.setArticleNO(articleNO);
 		article.setId(id);
-		
-		articleMap.remove("boardVO");
+
 		articleMap.put("article", article);
 		
 		mav.addObject("articleMap", articleMap);
+		System.out.println("articleMap" +  articleMap);
 		System.out.println("modArticleForm.do 완료");
 		return mav;
 	}
